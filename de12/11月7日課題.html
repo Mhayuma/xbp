@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>１１月７日課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    
+    <!-- h1.htmlからある行をコピペしてくればOK --><link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>写真を認識するコード</h1>
+    <h2>数当てゲーム</h2>
+    
+
+<pre><code>
+ <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">&lt;script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"&gt;&lt;/script&gt;</li>
+                <li style="background-color:#EEF;">&lt;img src="AI画像解析したい画像のURL" id="myImage" /&gt;</li>
+                <li style="background-color:#EFF;">&lt;script&gt;</li>
+                <li style="background-color:#EEF;">const classifier = ml5.imageClassifier("MobileNet", () =&gt; {</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;console.log('model ready!')</li>
+                <li style="background-color:#EEF;">});</li>
+                <li style="background-color:#EFF;">const img = document.querySelector("#myImage");</li>
+                <li style="background-color:#EEF;">const prediction = classifier.predict(img, gotResults);</li>
+                <li style="background-color:#EFF;">function gotResults(err, results) {</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;results.forEach(result =&gt; {</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`${result.label} - ${result.confidence}`)</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;});</li>
+                <li style="background-color:#EFF;">}</li>
+                <li style="background-color:#EEF;">&lt;/script&gt;</li>
+                </ol></code>
+</code></pre>
+
+<li>上記のAI画像認識したい画像のURL、の部分は、実際に画像認識したい画像のURL(パス)を記述します。</li>
+<li>先程のHTMLファイルをブラウザで表示します。F12を押して開発者ツールを開きます。</li>
+<li>開発者ツールのコンソールを表示します。すると、AI画像認識結果が表示されます。</li>
+
+<h2>補足</h2>
+これを応用すれば、写真を読み込んだだけで、そのものの相場がわかる機能ができると考えられる。
+<br>
+
+</body>
+</html>
